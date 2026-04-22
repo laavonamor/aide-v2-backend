@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aide-v2-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GIGACHAT_AUTH_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: ADMIN_SECRET_CODE
+        value: AIDE_ADMIN
