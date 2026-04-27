@@ -136,7 +136,7 @@ async def chat(req: ChatRequest):
     supabase.table("messages").insert({"org_id": org_id, "role": "user", "content": req.message}).execute()
 
     # Поиск через Tavily если нужен
-    search_context = ""
+    search_context = "\nОбязательно используй эти данные и давай ссылки на источники."
     if needs_search(req.message) and os.environ.get("TAVILY_API_KEY"):
         try:
             search_results = tavily.invoke(req.message)
