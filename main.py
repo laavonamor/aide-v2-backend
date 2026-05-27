@@ -32,7 +32,7 @@ supabase = create_client(
 
 giga = GigaChat(
     credentials=os.environ["GIGACHAT_AUTH_KEY"],
-    model="GigaChat-Pro",
+    model="GigaChat-2-Max",
     verify_ssl_certs=False,
     scope="GIGACHAT_API_PERS",
     profanity_check=False,
